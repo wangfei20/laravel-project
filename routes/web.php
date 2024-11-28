@@ -10,6 +10,7 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('categories', App\Http\Controllers\CategoryController::class);
+Route::resource('items', App\Http\Controllers\ItemController::class);
 
 Route::resource('companies', App\Http\Controllers\CompanyController::class);
 Route::resource('series', App\Http\Controllers\SeriesController::class);

@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
     public function edit(string $id)
     {
-        //retrieve the company corresponding to the passed key value
+        //retrieve the Category corresponding to the passed key value
         $category = \App\Models\Category::find($id);
         if (!$category) dd("no category found");
 
@@ -70,7 +70,7 @@ class CategoryController extends Controller
     {
         //dd($request);
         $rules = [
-            'name' => 'required|max:50|unique:companies,name,'.$id
+            'name' => 'required|max:50|unique:categories,name,'.$id
         ];
         $validator = $this->validate($request, $rules);
 
@@ -95,14 +95,14 @@ class CategoryController extends Controller
         //dd('delete');
         $category = \App\Models\Category::find($id);
         if (!$category) { 
-            //dd("no company found");
-            Session::flash('error', 'No company found');
+            //dd("no Category found");
+            Session::flash('error', 'No Category found');
         } else {
             $category->delete();
-            Session::flash('success', 'Company deleted');
+            Session::flash('success', 'Category deleted');
         }
 
-        return redirect()->route('companies.index');
+        return redirect()->route('categories.index');
     }
 
     public function confirmDelete(string $id)

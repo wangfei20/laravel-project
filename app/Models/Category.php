@@ -12,7 +12,4 @@ class Category extends Model
     protected $table = "categories";
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    public function series() {
-        return $this->hasMany('App\Models\Series', 'category_id');
-    }
 }
