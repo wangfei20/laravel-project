@@ -79,6 +79,12 @@
                             </div>-->
                             <div class="row">
                                 <div class="col-md-12">
+                                    <label for="picture">Picture</label>
+                                    <input type="file" name="picture" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
                                     <label for="category_id">Category</label>
                                     <select name="category_id" id="category_id">
                                         <option value="">Select a Category</option>
