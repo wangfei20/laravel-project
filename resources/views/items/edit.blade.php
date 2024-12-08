@@ -46,6 +46,12 @@
                                     value="{{ old('quantity', $item->quantity) }}"/>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="picture">Picture</label>
+                                    <input type="file" name="picture" />
+                                </div>
+                            </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <label for="category_id">Category</label>

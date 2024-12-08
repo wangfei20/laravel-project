@@ -43,7 +43,7 @@
                                     </div>
                                     <div style="float:left; margin-left:5px;">
                                         <form method="post" action="/items/{{ $item->id }}" 
-                                              onsubmit="return confirm('Delete Category? Are you sure?')">
+                                              onsubmit="return confirm('Are you sure you want to delete this item?')">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE"/>
                                             <input type="submit" name="submit" value="Delete" 

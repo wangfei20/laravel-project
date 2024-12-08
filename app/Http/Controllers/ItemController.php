@@ -103,6 +103,7 @@ class ItemController extends Controller
         $item->quantity = (int)$request->quantity;
         $item->category_id = (int)$request->category_id;
         $item->sku = $request->sku;
+        $item->picture = $request->picture;
         $item->save();
 
         //Flash a success message
@@ -121,13 +122,13 @@ class ItemController extends Controller
         $item = \App\Models\Item::find($id);
         if (!$item) { 
             //dd("no company found");
-            Session::flash('error', 'No company found');
+            Session::flash('error', 'No item found');
         } else {
             $item->delete();
-            Session::flash('success', 'Company deleted');
+            Session::flash('success', 'Item deleted');
         }
 
-        return redirect()->route('companies.index');
+        return redirect()->route('items.index');
     }
 
     public function confirmDelete(string $id)
